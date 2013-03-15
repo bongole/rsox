@@ -257,7 +257,7 @@ typedef struct {/* rsox_block_with_id_t */
   ID func;
 } rsox_block_with_id_t;
 
-static int rsox_rubyblock_flow(sox_effect_t *effect, sox_sample_t const *ibuf, sox_sample_t *obuf UNUSED, size_t *isamp, size_t *osamp) {
+static int rsox_rubyblock_flow(sox_effect_t *effect, sox_sample_t const *ibuf, sox_sample_t *obuf, size_t *isamp, size_t *osamp) {
   size_t i;
   rsox_block_with_id_t *param = (rsox_block_with_id_t *)effect->priv;
   VALUE buffer = Data_Wrap_Struct(RSoxBuffer, 0, 0, ibuf);
