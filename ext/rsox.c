@@ -352,7 +352,7 @@ VALUE rsoxbuffer_at(VALUE self, VALUE index) {
   sox_sample_t *c_buffer;
 
   if (index < rb_iv_get(self, "@length")) {
-    Data_Get_Struct(self, sox_sample_t, c_buffer);
+    Data_Get_Struct(rb_iv_get(self, "@buffer"), sox_sample_t, c_buffer);
     return INT2NUM(c_buffer[NUM2INT(index)]);
   }
 
